@@ -1,0 +1,38 @@
+{
+    "editor": {
+        "css": {
+            "alagova": [
+                "test/fixtures/inner/alagova.css",
+                "test/fixtures/file1.css",
+                "exclude2.scss",
+                "test/fixtures/file3.css"
+            ],
+            "galim": [
+                "test/fixtures/inner/galim.css",
+                "test/fixtures/file1.css",
+                "exclude2.scss",
+                "test/fixtures/file3.css"
+            ]
+        },
+        "js": {
+            "ar": [
+                "test/fixtures/inner/ar.js",
+                "test/fixtures/file4.js",
+                "test/fixtures/file5.js",
+                "test/fixtures/file6.js",
+                "test/fixtures/file7.min.js",
+                "test/fixtures/file8.Min.js",
+                "test/fixtures/file_function_test.js"
+            ],
+            "he": [
+                "test/fixtures/inner/he.js",
+                "test/fixtures/file4.js",
+                "test/fixtures/file5.js",
+                "test/fixtures/file6.js",
+                "test/fixtures/file7.min.js",
+                "test/fixtures/file8.Min.js",
+                "test/fixtures/file_function_test.js"
+            ]
+        }
+    }
+}
