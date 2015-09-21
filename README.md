@@ -28,43 +28,6 @@ Task targets, files and options may be specified according to the grunt [Configu
 
 ### Options
 
-#### banner
-Type: `String`  
-Default: `null`
-
-Prefix the destination file with the given banner, with a linebreak inbetween.
-
-#### footer
-Type: `String`  
-Default: `null`
-
-Postfix the destination file with the given footer, with a prepended linebreak.
-
-#### eol
-Type: `String`  
-Choices: `'lf'`, `'cr'`, `'crlf'`  
-Default: `'lf'`
-
-The linefeed character you would like to use for the destination file.
-
-#### prefix
-Type: `String`  
-Default: `null`
-
-A prefix string to prepend to each file that is found.
-
-#### postfix
-Type: `String`  
-Default: `null`
-
-A postfix string to append to each file that is found.
-
-#### postfixLastLine
-Type: `String`  
-Default: `null`
-
-A postfix string to append to the last file that is found.
-
 
 #### replacements
 Type: `Array`  
@@ -104,19 +67,6 @@ If the pattern is a string, only the first occurrence will be replaced, as state
 ```javascript
 grunt.initConfig({
   listfiles: {
-    options: {
-      banner: '/**\n' +
-              ' * list files banner\n' +
-              ' */\n' +
-              '{\n' +
-              '\t[',
-      footer: '\t]\n' +
-              '}',
-      eol: 'crlf',
-      prefix: '\t\t\'',
-      postfix: '\',',
-      postfixLastLine: '\''
-    },
     test1: {
       files: {
         'tmp/output.txt': [
@@ -129,9 +79,9 @@ grunt.initConfig({
   }
 });
 
-grunt.loadNpmTasks('grunt-listfiles');
+grunt.loadNpmTasks('grunt-listfiles-json');
 
-grunt.registerTask('default', ['listfiles']);
+grunt.registerTask('default', ['jsonlistfiles']);
 ```
 
 

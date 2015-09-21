@@ -1,31 +1,28 @@
 {
-  "name": "grunt-listfiles",
-  "description": "Create a list of files and perform an action on each file in the list then write the results to a file.",
+  "name": "grunt-listfiles-json",
+  "description": "Create a list of files and perform an action on each file in the list then write the results to a json file.",
   "version": "0.1.4",
-  "homepage": "https://github.com/psyrendust/grunt-listfiles",
+  "homepage": "https://github.com/MoLow/grunt-listfiles-jsons",
   "author": {
-    "name": "Larry Gordon",
-    "url": "https://github.com/psyrendust/"
+    "name": "Moshe atlow",
+    "url": "https://github.com/MoLow/"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/psyrendust/grunt-listfiles.git"
   },
   "bugs": {
-    "url": "https://github.com/psyrendust/grunt-listfiles/issues"
+    "url": "https://github.com/MoLow/grunt-listfiles-json/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/psyrendust/grunt-listfiles/blob/master/LICENSE-MIT"
+      "url": "https://github.com/MoLow/grunt-listfiles-json/blob/master/LICENSE-MIT"
     }
   ],
   "main": "Gruntfile.js",
   "engines": {
     "node": ">= 0.8.x"
-  },
-  "scripts": {
-    "test": "grunt test"
   },
   "devDependencies": {
     "grunt-contrib-jshint": "~0.6.0",
@@ -40,10 +37,10 @@
   },
   "keywords": [
     "gruntplugin",
-    "eol",
     "listfiles",
     "process",
     "regex",
-    "replace"
+    "replace",
+    "json"
   ]
 }

@@ -1,6 +1,6 @@
 /**
  * grunt-listfiles
- * https://github.com/psyrendust/grunt-listfiles
+ * https://github.com/MoLow/grunt-listfiles-json
  *
  * Copyright (c) 2013 Larry Gordon
  * Licensed under the MIT License
@@ -21,17 +21,11 @@ module.exports = function (grunt) {
   }
 
   // Create a list of files and perform an action on each file in the list then write the results to a file
-  grunt.registerMultiTask('listfiles', 'Create a list of files and perform an action on each file in the list then write the results to a file', function () {
+  grunt.registerMultiTask('jsonlistfiles', 'Create a list of files and perform an action on each file in the list then write the results to a json file', function () {
     // Tell Grunt this task is asynchronous.
     var done = this.async();
     var list = [];
     var options = this.options({
-      banner: '',
-      footer: '',
-      eol: 'lf',
-      prefix: '\'',
-      postfix: '\'',
-      postfixLastLine: '\'',
       replacements: []
     });
 
@@ -69,16 +63,7 @@ module.exports = function (grunt) {
           }, filePath);
         });
       }
-      src = src.map(function (file, i) {
-        return options.prefix + file + ((i === last) ? options.postfixLastLine : options.postfix + '\n');
-      });
-      if (options.banner.length > 0) {
-        src.unshift(options.banner + '\n');
-      }
-      if (options.footer.length > 0) {
-        src.push('\n' + options.footer);
-      }
-      output = lineEnding(src.join(''), options.eol);
+      output = JSON.stringify(src)
       grunt.file.write(f.dest, output);
       grunt.log.ok(totalFiles + ' file' + (totalFiles === 1 ? '' : 's') + ' processed.');
       grunt.log.ok('Created file ' + f.dest);
