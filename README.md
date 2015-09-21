@@ -35,22 +35,22 @@ grunt.initConfig({
   jsonlistfiles: {
     test1: {
         variables: {
-            '$css': 'test/fixtures/inner/*.css',
-            '$js': 'test/fixtures/inner/*.js'
+            '$theme': 'test/fixtures/inner/*.css',
+            '$lang': 'test/fixtures/inner/*.js'
         },
         files: {
             'tmp/output.json': {
                 editor: {
                     css: {
-                        '{%= $css.filename %}': [
-                            '{%= #$css.path %}',
+                        '{%= $theme.filename %}': [
+                            '{%= #$theme.path %}',
                             'test/fixtures/*.css',
                             'exclude2.scss'
                         ]
                     },
                     js: {
-                        '{%= $js.filename %}': [
-                           '{%= #$js.path %}',
+                        '{%= $lang.filename %}': [
+                           '{%= #$lang.path %}',
                            'test/fixtures/*.js'
                         ]
 
@@ -73,14 +73,14 @@ result of that is:
     {
         "editor": {
             "css": {
-                "alagova": [
-                    "test/fixtures/inner/alagova.css",
+                "theme1": [
+                    "test/fixtures/inner/theme1.css",
                     "test/fixtures/file1.css",
                     "exclude2.scss",
                     "test/fixtures/file3.css"
                 ],
-                "galim": [
-                    "test/fixtures/inner/galim.css",
+                "theme2": [
+                    "test/fixtures/inner/theme2.css",
                     "test/fixtures/file1.css",
                     "exclude2.scss",
                     "test/fixtures/file3.css"
@@ -115,7 +115,7 @@ result of that is:
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
- * 2015-09-23   v0.1.5   Make export as Json, and use variables to format it.
+ * 2015-09-23   v0.1.5   Make export as Json, and use variables to format it.
  * 2013-09-16   v0.1.4   Added regular expression replacemnt option.
  * 2013-07-02   v0.1.3   Added Version Badge.
  * 2013-07-02   v0.1.2   Fixed broken Travis test.
