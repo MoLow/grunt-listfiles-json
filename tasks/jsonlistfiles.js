@@ -123,7 +123,7 @@ module.exports = function (grunt) {
             var files = grunt.file.expand({ cwd: options.cwd }, strCopy);
             if (files.length > 0) {
                 files.forEach(function (file, i, arr) {
-                    arr[i] = (addSlash?'/':'') + file.replace(options.cwd, '');
+                    arr[i] = (addSlash?'/':'') + file;
                 })
                 return files.length > 1 ? files : files[0];
             }
@@ -178,20 +178,18 @@ module.exports = function (grunt) {
         
         function getVariables() {
             for (var _var in data.variables) {
-                if (grunt.util.kindOf(data.variables[_var]) === "string") {
-                    var __var = grunt.file.expand(path.join(options.cwd, data.variables[_var]));
-                    if (__var.length) {
-                        __var.forEach(function (file) {
-                            var ext = path.extname(file);
-                            var filename = path.basename(file, ext);
-                            variables[_var] = variables[_var] || [];
-                            variables[_var].push({
-                                path: file.replace(options.cwd, ''),
-                                filename: filename,
-                                ext: ext
-                            });
-                        })
-                    }
+                var __var = grunt.file.expand({ cwd: options.cwd }, data.variables[_var]);
+                if (__var.length) {
+                    __var.forEach(function (file) {
+                        var ext = path.extname(file);
+                        var filename = path.basename(file, ext);
+                        variables[_var] = variables[_var] || [];
+                        variables[_var].push({
+                            path: file,
+                            filename: filename,
+                            ext: ext
+                        });
+                    })
                 } else {
                     variables[_var] = data.variables[_var];
                 }
