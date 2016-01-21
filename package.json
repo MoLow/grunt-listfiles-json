@@ -1,7 +1,7 @@
 {
   "name": "grunt-listfiles-json",
   "description": "Create a list of files and perform an action on each file in the list then write the results to a json file.",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "homepage": "https://github.com/MoLow/grunt-listfiles-jsons",
   "author": {
     "name": "Moshe atlow",
