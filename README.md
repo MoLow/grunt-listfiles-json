@@ -38,7 +38,7 @@ grunt.initConfig({
             '$theme': 'test/fixtures/inner/*.css',
             '$lang': 'test/fixtures/inner/*.js'
         },
-        files: {
+        dest: {
             'tmp/output.json': {
                 editor: {
                     css: {

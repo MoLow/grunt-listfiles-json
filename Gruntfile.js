@@ -22,7 +22,7 @@ module.exports = function (grunt) {
                     '$css': 'test/fixtures/inner/*.css',
                     '$js': 'test/fixtures/inner/*.js'
                 },
-                files: {
+                dest: {
                     'tmp/output.json': {
                         editor: {
                             css: {

@@ -198,8 +198,8 @@ module.exports = function (grunt) {
         
         getVariables();
         
-        for (var dest in data.files) {
-            grunt.file.write(dest, JSON.stringify(recursiveSearch(data.files[dest]), null, 4));
+        for (var dest in data.dest) {
+            grunt.file.write(dest, JSON.stringify(recursiveSearch(data.dest[dest]), null, 4));
             grunt.log.ok('Created file ' + dest);
         };
         
